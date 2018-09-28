@@ -26,6 +26,18 @@ func BytesToUint(item []byte) *big.Int {
 	return res
 }
 
+func HexToString(item string) string {
+	res := new(big.Int)
+	res.SetBytes(common.Hex2Bytes(item))
+	return res.String()
+}
+
+func HexToInt64(item string) int64 {
+	res := new(big.Int)
+	res.SetBytes(common.Hex2Bytes(item))
+	return res.Int64()
+}
+
 func ToBytes32(b []byte) [32]byte {
 	var arr [32]byte
 	copy(arr[:], b)
