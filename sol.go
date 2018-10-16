@@ -26,9 +26,15 @@ func BytesToUint(item []byte) *big.Int {
 	return res
 }
 
+func StringToBig(item string) *big.Int {
+	res := new(big.Int)
+	res.SetString(item, 10) //base 10
+	return res
+}
+
 func HexToString(item string) string {
 	res := new(big.Int)
-	res.SetBytes(common.Hex2Bytes(item))
+	res.SetString(item,16)
 	return res.String()
 }
 
